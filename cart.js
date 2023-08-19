@@ -78,8 +78,8 @@ let products = [
         tag:'nasatshirt',
         price: 5,
         incart: 0
-    },
-]
+    }
+];
 
 
 for (let i=0; i < carts.length; i++){
@@ -147,9 +147,11 @@ function totalcost(product){
     
     console.log("my cartcost is", cartcost);
     console.log(typeof cartcost);
+    
     if(cartcost != null){
         cartcost = parseInt(cartcost);
-        localStorage.setItem("totalcost", cartcost + product.price);
+        localStorage.setItem("totalcost", cartcost + 
+        product.price);
     }else{
         localStorage.setItem("totalcost", product.price);
     }
