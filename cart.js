@@ -82,9 +82,10 @@ let products = [
 ]
 
 
-for(let i=0; i< carts.length; i++){
+for (let i=0; i < carts.length; i++){
     carts[i].addEventListener('click', () => {
         cartNumbers(products[i]);
+        totalcost(products[i])
     })
 }
 
@@ -140,4 +141,18 @@ function setItem(product){
     localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
 
+function totalcost(product){
+    //console.log("The product price is",product.price);
+    let cartcost = localStorage.getItem('totalcast');
+    
+    console.log("my cartcost is", cartcost);
+    console.log(typeof cartcost);
+    if(cartcost != null){
+        cartcost = parseInt(cartcost);
+        localStorage.setItem("totalcost", cartcost + product.price);
+    }else{
+        localStorage.setItem("totalcost", product.price);
+    }
+    
+}
 onLoadcartNumbers();
