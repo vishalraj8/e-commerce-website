@@ -142,7 +142,6 @@ function setItem(product){
 }
 
 function totalcost(product){
-    //console.log("The product price is",product.price);
     let cartcost = localStorage.getItem('totalcast');
     
     console.log("my cartcost is", cartcost);
@@ -156,5 +155,14 @@ function totalcost(product){
         localStorage.setItem("totalcost", product.price);
     }
     
+}
+function displaycart(){
+    let cartItems = localStorage.getItem("productsIncart");
+    cartItems = JSON.parse(cartItems);
+    let productContainer = document.querySelector
+    (".products-container");
+    if (cartItems && productContainer){
+        
+    }
 }
 onLoadcartNumbers();

@@ -314,98 +314,51 @@ input{
 
 /*--cart iteam---*/
 
-.cart-page{
-    margin: 80px auto;
+.products-container{
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
     color: #fff;
 }
-table{
+.porduct-header{
     width: 100%;
-    border-collapse: collapse;
-}
-.cart-info{
-    display:flex;
-    flex-wrap: wrap;
-}
-th{
-    text-align: left;
-    padding: 5px;
-    color: #fff;
-    background-color: #642020;
-    font-weight: normal;
-}
-
-td{
-    padding: 10px 5px;
-}
-td input{
-    width: 40px;
-    height: 30px;
-    padding: 2px;
-    margin: 5px;
-}
-td button {
-      background-color: #642020;
-      border-radius: 5px;
-      border-style: none;
-      box-sizing: border-box;
-      color: #FFFFFF;
-      cursor: pointer;
-      display: inline-block;
-      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      height: 15px;
-      line-height: 0px;
-      list-style: none;
-      margin: 0;
-      outline: none;
-      padding: 15px 15px;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      transition: 256ms all;
-      vertical-align: baseline;
-      user-select: none;
-      
-      touch-action: manipulation;
-    }
-    
-td button:hover ,button:focus {
-      background-color: #000000;
-      color: #ffffff;
-    }
-td img{
-    width:80px;
-    height: 80px;
-    margin-right: 10px;
-}
-
-.total-price{
+    max-width: 650px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
 }
-.total-price table{
-    border-top: 3px solid #642020;
-    width: 100%;
-    max-width: 290px;
+.product-title{
+    width: 45%;
 }
-td:last-child{
-    text-align: right;
+.price{
+    width: 15%;
+    
+    display: flex;
+    align-items: center;
 }
-th:last-child{
-    text-align: right;
+.quantity{
+    width: 30%;
+    border-bottom: 4px solid lightgray;
+    display: flex;
+    align-items: center;
 }
-.cart1 ion-icon{
-    vertical-align: bottom;
-    font-size: 20px;
-    padding-right: 5px;
+.total{
+    width: 10%;
+    border-bottom: 4px solid lightgray;
+    display: flex;
+    align-items: center;
 }
-.cart1 a{
-    background-color: #000000;
-    color: #FFFFFF;
-    cursor: pointer;
-    text-decoration: none;
+.porducts{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 4px solid lightgray;
 }
+
 /*
 .add-cart{
     position: absolute;
