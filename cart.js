@@ -162,7 +162,7 @@ function displaycart(){
     let productContainer = document.querySelector
     (".products-container");
     if (cartItems && productContainer){
-        
+        (".producter-container")
     }
 }
 onLoadcartNumbers();
