@@ -19,12 +19,11 @@
 }
 
 body {
-	background: linear-gradient(-45deg, #381910, #070f36, #071d25, #0d4437);
+	background: linear-gradient(49deg, #261f2b, #070611, #1d1c1c, #201c1c);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
     background-position: center;
-    background-size: cover;
     display: flex;
     
     justify-content: center;
@@ -46,17 +45,14 @@ body {
 .container
 {
     width: 400px;
-    height: 500px;
+    height: 450px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
-    
+    flex-direction: column; 
 }
 
 .form-group label
