@@ -34,8 +34,8 @@ a{
 
 p{
 
-color: #ff5151;
-font-family: Georgia, 'Times New Roman', Times, serif ;
+color: #857171;
+font-family: alliance,sans-serif ;
 margin: 0 0px
 }
 
@@ -64,7 +64,7 @@ margin: 0 0px
 }
 
 .col-2 h1{
-    font-family:  monospace;
+    font-family: 'Cinzel', serif;
     font-size: 50px;
     line-height:50px;
     margin: 0px 0px;
