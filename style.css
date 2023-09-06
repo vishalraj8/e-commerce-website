@@ -29,7 +29,7 @@ nav ul li{
 a{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
     text-decoration: none;
-    color:#ff5151 ;
+    color:#ffffff ;
 }
 
 p{
@@ -68,7 +68,9 @@ margin: 0 0px
     font-size: 50px;
     line-height:50px;
     margin: 0px 0px;
-    color: #dbdbdb;
+    background-image:linear-gradient(106.62deg, rgb(165, 37, 19) 6.68%, rgb(149, 35, 147) 82.69%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .btn{
@@ -393,6 +395,14 @@ section {
 .footer-distributed .footer-right{
   display: inline-block;
   vertical-align: top;
+}
+
+h4{
+    font-family: 'Cinzel', serif;
+    background-image:linear-gradient(106.62deg, rgb(165, 37, 19) 6.68%, rgb(149, 35, 147) 82.69%);
+    -webkit-background-clip: text;
+    color: transparent;
+
 }
 
 /* Footer left */
