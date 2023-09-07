@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #000;
+   
+}
+
+body{
+    background-color: #141414;
 }
 
 .navbar{
@@ -34,9 +38,10 @@ a{
 
 p{
 
-color: #857171;
+color: #ffffff;
 font-family: alliance,sans-serif ;
-margin: 0 0px
+margin: 5px 0px;
+padding: 0px 15px;
 }
 
 .container{
@@ -44,6 +49,7 @@ margin: 0 0px
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+    background-image: url();
 }
 
 .row{
@@ -68,6 +74,7 @@ margin: 0 0px
     font-size: 50px;
     line-height:50px;
     margin: 0px 0px;
+    padding: 0px 15px;
     background-image:linear-gradient(106.62deg, rgb(165, 37, 19) 6.68%, rgb(149, 35, 147) 82.69%);
     -webkit-background-clip: text;
     color: transparent;
@@ -79,7 +86,7 @@ margin: 0 0px
   background-color: transparent;
   color: #fff;
   padding: 8px 30px;
-  margin: 30px 15px;
+  margin: 15px 15px;
   font-size: 16px;
   cursor: pointer;
   transition: 256ms all;
@@ -229,17 +236,12 @@ small{
 }
 
 select{
-    border: 1px solid #ffffff;
+    border: 1px solid ;
     padding: 4px;
-    color: #ffffff;
 }
 select:focus{
     outline: none;  
 }
-option{
-    color: #fff;
-}
-
 .page-btn{
     margin: 0 auto 80px;
 }
