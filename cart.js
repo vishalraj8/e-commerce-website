@@ -1,9 +1,10 @@
 let carts = document.querySelectorAll('.add-cart');
 
+// Your products array
 let products = [
     {
-        name:'Brown chex shirt',
-        tag:'Brownchexshirt',
+        name: 'Brown chex shirt',
+        tag: 'Brownchexshirt',
         price: 20,
         incart: 0
     },
@@ -80,89 +81,122 @@ let products = [
         incart: 0
     }
 ];
+let cart = JSON.parse(localStorage.getItem('productsInCart')) || {};
+let totalCost = parseInt(localStorage.getItem('totalcost')) || 0;
+const cartItemsContainer = document.querySelector('.cart-items'); // Container for cart items
 
-
-for (let i=0; i < carts.length; i++){
+for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
-        cartNumbers(products[i]);
-        totalcost(products[i])
-    })
+        // Get the selected product from the products array
+        let product = products[i];
+
+        // Add the product to the cart
+        if (cart[product.tag] === undefined) {
+            product.incart = 1;
+            cart[product.tag] = product;
+        } else {
+            cart[product.tag].incart += 1;
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('productsInCart', JSON.stringify(cart));
+
+        // Update the total cost
+        totalCost += product.price;
+        localStorage.setItem('totalcost', totalCost);
+
+        // Update the cart icon and total quantity
+        updateCartUI();
+
+        // Add the product image to the cart
+        displayProductInCart(product);
+    });
 }
 
-function onLoadcartNumbers(){
-    let productNumbers = localStorage.getItem('cartNumbers');
+// Function to update the cart icon and total quantity
+function updateCartUI() {
+    let productNumbers = 0;
 
-    if( productNumbers ){
-        document.querySelector('.cart1 span').textContent = productNumbers;
-   }
-    
-}
-
-function cartNumbers(product){
-    
-    let productNumbers = localStorage.getItem('cartNumbers');
-    
-    productNumbers = parseInt(productNumbers);
-    if( productNumbers ){
-         localStorage.setItem('cartNumbers', productNumbers + 1);
-         document.querySelector('.cart1 span').textContent = productNumbers + 1;
-    } else{
-        localStorage.setItem('cartNumbers', 1);
-        document.querySelector('.cart1 span').textContent = 1;
+    for (let tag in cart) {
+        productNumbers += cart[tag].incart;
     }
 
-    setItem(product);
-   
+    document.querySelector('.cart1 span').textContent = productNumbers;
 }
-function setItem(product){
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
-    let cartItems = localStorage.getItem('productsInCart');
-    cartItems = JSON.parse(cartItems);
 
-    if(cartItems != null) {
-        let currentProduct = product.tag;
-    
-        if(cartItems[currentProduct] == undefined) {
-            cartItems = {
-                ...cartItems,
-                [currentProduct]: product
-            }
-        } 
-        cartItems[currentProduct].inCart += 1;
+// Function to display the cart items on the cart page
+function displayCartOnCartPage() {
+    let cartItemsContainer = document.querySelector('.cart-items');
+    let cartTotal = document.querySelector('.cart-total span'); // Update this selector to target the total span element
 
-    } else {
-        product.inCart = 1;
-        cartItems = { 
-            [product.tag]: product
-        };
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+    let totalPrice = 0;
+
+    for (let tag in cart) {
+        let product = cart[tag];
+        let cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <span>${product.name}</span>
+            <span>$${product.price.toFixed(2)}</span>
+            <span>${product.incart}</span>
+            <span>$${(product.price * product.incart).toFixed(2)}</span>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+
+        totalPrice += product.price * product.incart;
     }
 
-    localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+    // Update the cart total
+    cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
 }
 
-function totalcost(product){
-    let cartcost = localStorage.getItem('totalcast');
-    
-    console.log("my cartcost is", cartcost);
-    console.log(typeof cartcost);
-    
-    if(cartcost != null){
-        cartcost = parseInt(cartcost);
-        localStorage.setItem("totalcost", cartcost + 
-        product.price);
-    }else{
-        localStorage.setItem("totalcost", product.price);
-    }
-    
+// Function to initialize the cart and total cost on the cart page load
+function initCartPage() {
+    displayCartOnCartPage();
 }
-function displaycart(){
-    let cartItems = localStorage.getItem("productsIncart");
-    cartItems = JSON.parse(cartItems);
-    let productContainer = document.querySelector
-    (".products-container");
-    if (cartItems && productContainer){
-        (".producter-container")
-    }
+
+// Call the initCartPage function on the cart page load
+window.addEventListener('load', initCartPage);
+
+
+// Function to add a product image to the cart
+function displayProductInCart(product) {
+    const productImage = document.createElement('img');
+    productImage.src = `D:/projects/${product.tag}.jpg`; // Adjust the path to your product images
+    productImage.alt = product.name;
+    cartItemsContainer.appendChild(productImage);
 }
-onLoadcartNumbers();
+
+// Function to initialize the cart and total cost on page load
+function init() {
+    onLoadcartNumbers();
+    displayCart();
+}
+// Function to calculate the total cost of items in the cart
+function calculateTotalCost(cart) {
+    let totalCost = 0;
+
+    for (let tag in cart) {
+        const product = cart[tag];
+        totalCost += product.price * product.incart;
+    }
+
+    return totalCost;
+}
+
+// Call the calculateTotalCost function to get the total cost
+totalCost = calculateTotalCost(cart);
+
+// Update the total cost in the localStorage
+localStorage.setItem('totalcost', totalCost);
+
+// Update the cart total on the cart page
+const cartTotal = document.querySelector('.cart-total span');
+cartTotal.textContent = `$${totalCost.toFixed(2)}`;
+
+// Call the initCartPage function on the cart page load
+window.addEventListener('load', initCartPage);
+
+init();
+
