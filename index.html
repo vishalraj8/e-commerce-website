@@ -20,14 +20,15 @@
         </div>
         <nav>
             <ul id="MenuItems">
-                <li><a href="index.html">home</a></li>
-                <li><a href="products.html">products</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="account.html">account</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li class="cart1"><a href="cart.html"><i class='bx bx-shopping-bag'></i><span>0</span></a></li>
             </ul>
         </nav> 
-        <li class="cart1"><a href="cart.html" class="add-cart"><i class='bx bx-shopping-bag'></i><span>0</span></a></li>
+        
             <img src="D:\projects\line.jpg" class="menu-icon" 
             onclick="menutoggle()">
       </div> 
@@ -414,6 +415,21 @@
 
           }
        </script>
+       <script>
+        // JavaScript code directly within the HTML file
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactLink = document.querySelector('a[href="#contact"]');
+
+            if (contactLink) {
+                contactLink.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Scroll to the "contact" section smoothly
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
        <script src="cart.js"></script>
 </body>
 </html>

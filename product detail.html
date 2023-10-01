@@ -6,6 +6,7 @@
     scale=1.0">
     <title>All products-one click</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,9 +22,10 @@
                 <li><a href="">contact</a></li>
                 <li><a href="">about</a></li>
                 <li><a href="account.html">acount</a></li>
+                <li class="cart1"><a href="cart.html"><i class='bx bx-shopping-bag'></i><span>0</span></a></li>
             </ul>
         </nav> 
-        <a href="cart.html"><img src="D:\projects\cart.png" width="30px" height="30px"></a>
+        
             <img src="D:\projects\line.jpg" class="menu-icon" 
             onclick="menutoggle()">
       </div> 
@@ -87,53 +89,58 @@
   <div class="small-container">
     <div class="row">
       <div class="col-4">
-          <img src="D:\projects\jack.jpg">
-          <h4>Black Casual shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$99.00</p>
+        <a href="product detail.html"><img src="D:\projects\jack.jpg"></a>
+        <a href="product detail.html"><h4>Black Casual shirt</h4></a>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
         </div>
-        <div class="col-4">
-          <img src="D:\projects\green.jpg">
-          <h4>Dark Green Casual shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$19.00</p>
+        <p>$99.00</p>
+        <a class="add-cart cart8" href="#">Add cart</a>
+      </div>
+      <div class="col-4">
+        <a href="product detail.html"><img src="D:\projects\green.jpg"></a>
+        <a href="product detail.html"><h4>Dark Green Casual shirt</h4></a>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
         </div>
-        <div class="col-4">
-          <img src="D:\projects\4.jpg">
-          <h4>oxford shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$12.00</p>
+        <p>$19.00</p>
+        <a class="add-cart cart9" href="#">Add cart</a>
+      </div>
+      <div class="col-4">
+        <a href="product detail.html"><img src="D:\projects\4.jpg"></a>
+        <a href="product detail.html"><h4>oxford shirt</h4></a>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
         </div>
-        <div class="col-4">
-          <img src="D:\projects\tsirt2.jpg">
-          <h4>nasa tshirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <p>$5.00</p>
+        <p>$12.00</p>
+        <a class="add-cart cart10" href="#">Add cart</a>
+      </div>
+      <div class="col-4">
+        <a href="product detail.html"><img src="D:\projects\tsirt2.jpg"></a>
+        <a href="product detail.html"><h4>nasa tshirt</h4></a>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
+        <p>$5.00</p>
+        <a class="add-cart cart11" href="#">Add cart</a>
+      </div>
+    </div>
     </div>
        
   </div>
@@ -254,6 +261,6 @@
     ProductImg.src = smallImg[3].src;
   }
 </script>
-
+<script src="cart.js"></script>
 </body>
 </html>

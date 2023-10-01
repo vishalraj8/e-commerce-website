@@ -6,6 +6,7 @@
     scale=1.0">
     <title>All products-one click</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -22,9 +23,9 @@
                 <li><a href="">contact</a></li>
                 <li><a href="">about</a></li>
                 <li><a href="account.html">acount</a></li>
+                <li class="cart1"><a href="cart.html"><i class='bx bx-shopping-bag'></i><span>0</span></a></li>
             </ul>
         </nav> 
-        <img src="D:\projects\cart.png" width="30px" height="30px">
             <img src="D:\projects\line.jpg" class="menu-icon" 
             onclick="menutoggle()">
       </div> 
@@ -42,18 +43,14 @@
         </div>
     </div>
     <!-- Cart Page -->
-    <section class="cart">
-      <div class="cart-items">
-          
-      </div>
-      <div class="cart-total">
-         <p>Total: $0.00</p>
-    <button id="checkout-btn">Checkout</button>
-      </div>
-  </section>
-
-</div>
-
+    <div class="cart-items">
+      <!-- Cart items will be displayed here dynamically -->
+  </div>
+  <div class="cart-total">
+      <h2>Cart Total</h2>
+      <p>Total: <span>0.00</span></p>
+  </div>
+  <a href="index.html">Continue Shopping</a>
 </main>
  <!--footer-->
  <div class="container9">
