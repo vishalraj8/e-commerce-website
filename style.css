@@ -376,107 +376,90 @@ input{
 }
 
 /*--cart iteam---*/
-.cart-items {
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-right: 10px;
+/* Center-align content within the products container */
+.products-container {
+    padding: 0px;
+    margin: 10px;
+    text-align: center; 
+    color: #ddd;
 }
 
-.cart-total {
-    margin-top: 20px;
-    text-align: right;
-}
-
-.cart-total {
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    text-align: right;
-    color: #fff;
-}
-.cart-items .span{
-    display: inline;
-    margin-right: 10px;
-}
-.cart-total h2 {
-    font-size: 18px;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 5px;
-    text-align: right;
-    color: #fff;
-}
-.cart-item {
-    margin-bottom: 10px;
-    padding: 10px;
+.porduct-header {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    font-family: Arial, sans-serif;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
-/* Align the button to the right */
-#checkout-btn {
-    background-color: #333;
-    color: #000000;
-    padding: 10px 20px;
+
+.product-title,
+.price,
+.quantity,
+.total {
+    font-weight: bold;
+    font-size: 18px;
+}
+.products {
+    color: red;
+}
+.cart-items {
+    margin-top: 20px;
+    text-align: center; 
+}
+
+/* Style for each individual cart item */
+.cart-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    color: #ddd;
+}
+
+.cart-item button {
+    background-color: #ff5555;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
+    margin-left: 10px;
+}
+
+.cart-item button:hover {
+    background-color: #ff0000;
+}
+
+/* Center-align content within the cart total section */
+.cart-total {
+    margin-top: 20px;
+    text-align: center; /* Center-align content */
+}
+
+.cart-total h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.cart-total p {
     font-size: 16px;
 }
 
-#checkout-btn {
-    margin-top: 10px; 
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
-
-
-.products-container{
-    max-width: 650px;
-    justify-content: space-around;
-    margin: 0 auto;
-    margin-top: 50px;
+#clear-cart {
+    background-color: #ff5555;
     color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
-.porduct-header{
-    width: 100%;
-    max-width: 650px;
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 4px solid lightgray;
-    margin: 0 auto;
+
+#clear-cart:hover {
+    background-color: #ff0000;
 }
-.product-title{
-    width: 45%;
-}
-.price{
-    width: 15%;
-    
-    display: flex;
-    align-items: center;
-}
-.quantity{
-    width: 30%;
-    border-bottom: 4px solid lightgray;
-    display: flex;
-    align-items: center;
-}
-.total{
-    width: 10%;
-    border-bottom: 4px solid lightgray;
-    display: flex;
-    align-items: center;
-}
-.porducts{
-    width: 45%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 4px solid lightgray;
-}
+
 .container8{
     text-align: center;
     background-color: #000;
@@ -740,6 +723,37 @@ h4{
 
 }
 
+.products-container {
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.cart-items {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-total {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style for screens 600px and smaller */
+@media (max-width: 600px) {
+    .products-container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .cart-items {
+        margin-top: 10px; /* Adjust margin-top for smaller screens */
+    }
+
+    .cart-total {
+        margin-top: 10px; 
+    }
+}
 /*--meaia query for less than 600 screen size--*/
 
 @media only screen and (max-width: 600px) {

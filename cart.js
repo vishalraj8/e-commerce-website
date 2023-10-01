@@ -140,7 +140,30 @@ let cart = JSON.parse(localStorage.getItem('productsInCart')) || {};
             productImage.src = `D:/projects/${product.tag}.jpg`;
             productImage.alt = product.name;
             cartItemsContainer.appendChild(productImage);
+            alert('Product removed from cart');
         }
+    
+    // Initialize the cart page
+    initCartPage();
+    
+    // Add event listener to the clear cart button
+    const clearCartButton = document.getElementById('clear-cart');
+    clearCartButton.addEventListener('click', () => {
+        localStorage.removeItem('productsInCart');
+        localStorage.removeItem('totalcost');
+        cart = {};
+        totalCost = 0;
+        displayCartOnCartPage();
+        updateCartUI();
+        alert('Cart cleared');
+    });
+    
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('remove-button')) {
+            const tagToRemove = event.target.getAttribute('data-tag');
+            removeProduct(tagToRemove);
+        }
+    });
         function init() {
             displayCartOnCartPage();
         }
