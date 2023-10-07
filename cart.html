@@ -51,6 +51,53 @@
     <p><span>0.00</span></p>
     <button id="clear-cart">Clear Cart</button>
   </div>
+  <div class="cart-items"></div>
+    </div>
+    <button id="checkout-button">Checkout</button>
+
+    <!---->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <p id="modal-text"></p>
+      </div>
+  </div>
+    <script>
+        const checkoutButton = document.getElementById('checkout-button');
+        const modal = document.getElementById('myModal');
+        const modalText = document.getElementById('modal-text');
+        const closeButton = document.querySelector('.close-button');
+
+        checkoutButton.addEventListener('click', () => {
+            const orderedProducts = [];
+
+            for (let tag in cart) {
+                const product = cart[tag];
+                orderedProducts.push(product.name);
+            }
+
+            if (orderedProducts.length === 0) {
+                modalText.textContent = 'No products in the cart. Add some products before checking out.';
+            } else {
+                const productList = orderedProducts.join(', ');
+                modalText.textContent = `Ordered Products: ${productList}\nOrder Placed!`;
+            }
+
+            // Display the modal
+            modal.style.display = 'block';
+        });
+
+        // Close the modal when the close button is clicked
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });</script>
 </main>
  <!--footer-->
  <div class="container9">
